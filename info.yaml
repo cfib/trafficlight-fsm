@@ -6,33 +6,33 @@
 #
 # This will be automatically collected and used to make a datasheet for the chip.
 project: 
-  author:       ""      # Your name
-  title:        ""      # Project title
-  description:  ""      # Short description of what your project does
-  how_it_works: ""      # Longer description of how the project works
-  how_to_test:  ""      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  ""      # Describe any external hardware needed
+  author:       "Christian Fibich"
+  title:        "Traffic Light FSM"
+  description:  "FSM controlling two (red-yellow-green) traffic lights"      # Short description of what your project does
+  how_it_works: "State machine that implements a typical Austrian traffic light: Red -> Red+Yellow -> Green -> Green Blinking -> Yellow -> Red. Generated using a hacked-together Verilog->Wokwi flow :D."      # Longer description of how the project works
+  how_to_test:  "Starts in 'error' mode (yellow blinking). Switch SW1 (reset) to 1 and back to 0 to start operation. 'error' mode can be reached by toggling SW2."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "2 red LEDs, 2 yellow LEDs, 2 green LEDs and current limiting resistors"      # Describe any external hardware needed
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     0       # Clock frequency in Hz (if required)
+  clock_hz:     2       # Clock frequency in Hz (if required)
   language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  wokwi_id:     0       # the wokwi ID
+  wokwi_id:     341410909669818963       # the wokwi ID
   picture:      ""      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do
     - clock
     - reset
-    - none
+    - enter_error_mode
     - none
     - none
     - none
     - none
     - none
   outputs:
-    - segment a         # a description of what the outputs do
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
+    - red 1         # a description of what the outputs do
+    - yellow 1
+    - green 1
+    - red 2
+    - yellow 2
+    - green 2
+    - none
     - none
 
